@@ -1,0 +1,66 @@
+// 	This file builds the classes to make grid columns visible or hidden.
+
+// Creating styles applied to all sizes and columns.
+$bigVisibleList: ();
+
+@each $gridBreak, $gridWidth in $gridBreaks {
+	@for $s from 1 through $totalColumns {
+		$bigVisibleList: append($bigVisibleList, unquote('.visible-#{$gridBreak}'), 'comma');
+	}
+}
+
+#{$bigVisibleList} {
+	display: none !important;
+}
+
+// Creating three lists and one variable to calculate the
+// media queries and max and min widths for the visible
+// and hidden classes.
+$maxWidthList: ();
+$minWidthList: ();
+$breakList: ();
+$gridCount: length($gridBreaks);
+
+// Populating the three lists to separate the key in
+// gridBreaks from its width, as well as calculating
+// the min width needed for the breakpoints.
+@each $gridBreak, $gridWidth in $gridBreaks {
+	$breakList: append($breakList, $gridBreak, 'comma');
+	$minWidthList: append($minWidthList, $gridWidth, 'comma');
+	@if $gridWidth != 0 {
+		$maxWidth: $gridWidth - 1;
+		$maxWidthList: append($maxWidthList, $maxWidth, 'comma');
+	}
+}
+
+// Assembling the visibility classes via a loop.
+@for $s from 1 through $gridCount {
+	@if $s == 1 {
+		@media (max-width: nth($maxWidthList, $s)) {
+			.visible-#{nth($breakList, $s)} {
+				display: block !important;
+			}
+			.hidden-#{nth($breakList, $s)} {
+				display: none !important;
+			}
+		}
+	} @else if $s == 7 {
+		@media (min-width: nth($minWidthList, $s)) {
+			.visible-#{nth($breakList, $s)} {
+				display: block !important;
+			}
+			.hidden-#{nth($breakList, $s)} {
+				display: none !important;
+			}
+		}
+	} @else {
+		@media (min-width: nth($minWidthList, $s)) and (max-width: nth($maxWidthList, $s)) {
+			.visible-#{nth($breakList, $s)} {
+				display: block !important;
+			}
+			.hidden-#{nth($breakList, $s)} {
+				display: none !important;
+			}
+		}
+	}
+}

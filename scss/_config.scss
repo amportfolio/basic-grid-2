@@ -1,0 +1,28 @@
+// 	This file serves as a configuation for the Basic Grid.
+
+// Base font size
+//
+// This will be the base point for rem measurements.
+// Just enter a pixel measurement, and the code will convert it all.
+$baseFontSizePx: 10px !default;
+$baseFontSize: pxToPercent($baseFontSizePx) !default;
+
+// Total number of columns
+$totalColumns: 12 !default;
+
+// Gutter width
+// $gridGutter: 1.25rem !default;
+$gridGutter: 0 !default;
+
+// Breakpoints
+//
+// Enter the minimum widths of the different layouts you will implement.
+$gridBreaks: (
+	xxs:	0,				// Small smartphones
+	xs:		320px,			// Normal smartphones
+	sm:		480px,			// Phablets
+	md:		768px,			// Small tablets
+	lg:		992px,			// Large tablets and small laptops
+	xl:		1200px,			// Large laptops and workstation monitors
+	xxl:	1440px			// Large screens
+) !default;

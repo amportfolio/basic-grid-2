@@ -1,0 +1,23 @@
+// 	Mixins for the Basic Grid.
+
+// Mixin to create one piece of the grid with a variable
+// placed in for push, pull, and offset.
+@mixin gridPiece($gridVar) {
+	@for $s from 1 through $totalColumns {
+		$finalEndColumn: $totalColumns + 1;
+		@for $e from 2 through $finalEndColumn {
+			$displayE: $e - 1;
+			.col-#{$gridVar}-#{$s}-#{$displayE} {
+				grid-column: #{$s} / #{$e};
+			}
+		}
+	}
+}
+
+// Mixin to create the pieces of the grid per breakpoint.
+@mixin gridProcess($gridVar) {
+
+	// Creating the individual column widths for each size.
+	@include gridPiece($gridVar);
+
+}

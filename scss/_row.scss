@@ -1,0 +1,7 @@
+//  This file builds the rows.
+
+.row, .grid {
+	display: grid;
+	grid-template-columns: repeat($totalColumns, 1fr);
+	grid-gap: $gridGutter;
+}

@@ -1,0 +1,33 @@
+// This file will build the final CSS for production.
+// It contains includes to all other files that go into
+// the build.
+
+// Normalize and Reset
+//
+// This contains Normalize.css and Eric Meyer's Reset.
+// If you wish you not use one or either of them, feel
+// free to comment out the includes, delete them,
+// or replace them. with your choice tools.
+@import "normalize";
+@import "em-reset";
+
+// Box Sizing for Everything
+//
+// This is needed so all elements will maintain their size
+// when aspects like padding are added to them.
+* {
+	box-sizing: border-box;
+}
+
+// Mandatory Files
+//
+// These files fully create the Basic Grid, and are
+// necessary for the final result.
+@import "config", "mixins", "row", "grid", "visibility";
+
+
+// Optional Files
+//
+// If you wish to add to the Basic Grid, you can include your
+// SCSS files here.
+// @import "header";

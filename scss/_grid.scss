@@ -1,0 +1,22 @@
+// 	This file builds the actual grid.
+
+// This will automatically make all divs within
+// the grid span 12 columns, unless you put a
+// breakpoint declaration in.
+div {
+	grid-column: span 12;
+}
+
+// Assembling the tenets of the grid via a loop.
+@each $gridBreak, $gridWidth in $gridBreaks {
+
+	// Any column with a minimum width larger than 0 will
+	// be encapsulated in a media query.
+	@if $gridWidth != 0 {
+		@media (min-width: $gridWidth) {
+			@include gridProcess($gridBreak);
+		}
+	} @else {
+		@include gridProcess($gridBreak);
+	}
+}

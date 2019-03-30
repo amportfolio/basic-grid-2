@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+	<title>Basic Grid 2.0</title>
+
+	<!-- Basic Grid CSS -->
+	<link href="css/basic-grid.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900" rel="stylesheet">
+
+	<!-- CSS styles for this presentation -->
+	<link href="presentation.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="mainContent">
+
+	<div class="grid">
+		<div class="col-xxs-1-12">
+			<h1 class="textCenter">Basic Grid</h1>
+			<p class="textCenter version">Version 2.0 by Alex Moschopoulos</p>
+
+			<h2>Introduction</h2>
+			<p>Basic Grid is a simple customizable CSS grid framework originally inspired by Bootstrap. Version 1.0 utilized floats and margins like Bootstrap, but with CSS Grid now the new standard, I wanted to make a new version of this system that utilizes CSS Grid as the backbone.</p>
+
+			<p>While this is a solid system for quick prototyping and even full builds, I will impress that it barely uses all the functions and options in CSS Grid Layout, and I would still suggest to those seeking to do more in their layouts to <a href="https://gridbyexample.com/">learn CSS Grid in full</a> and create your own grids as you see fit.</p>
+
+			<p>If you like and want to use this system (or your own grids), I also have a responsive header navigation that sizes into a CSS-only hamburger menu, built using CSS Grid. You can check it out <a href="https://www.amportfolio.com/code/hamburger-menu-2/example">here</a>.</p>
+
+			<p class="addMarginBtm3">Like with version 1.0, I&rsquo;m still using <a href="https://github.com/necolas/normalize.css">Normalize</a> and <a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer&rsquo;s reset</a> for improved cross-browser rendering. If you wish to remove this or use your own reset system, see <em>Customizing Basic Grid</em> at the bottom on how you can process your own customized version of this framework.</p>
+
+			<h2>Getting Started</h2>
+			<p>Beyond the standards of HTML like declaring <span class="code green">doctype</span>, you will need to set your viewport in order to make this work perfectly:</p>
+		</div>
+	</div>
+	<div class="grid addMarginBtm3">
+		<div class="col-xxs-1-12 grayCell code">
+			<span class="dkBlue">&lt;meta</span> <span class="ltBlue">name=</span><span class="red">&quot;viewport&quot;</span> <span class="ltBlue">content=</span><span class="red">&quot;width=device-width, initial-scale=1.0, minimum-scale=1.0&quot;</span><span class="dkBlue">&gt;</span>
+		</div>
+	</div>
+	<div class="grid">
+		<div class="col-xxs-1-12">
+			<h2>Grid Column Options</h2>
+			<p>This grid system in its default form uses a 12-column grid with seven breakpoints for responsive design:</p>
+		</div>
+	</div>
+	<div class="grid">
+		<div class="col-xxs-1-4 bpColumnHeadLeft"><strong>Breakpoint</strong></div>
+		<div class="col-xxs-5-8 bpColumnHeadCenter"><strong>Size Range</strong></div>
+		<div class="col-xxs-9-12 bpColumnHeadRight"><strong>Ideal For</strong></div>
+	</div>
+	<div class="grid">
+		<div class="col-xxs-1-4 bpColumnLeft"><strong>.col-xxs-</strong></div>
+		<div class="col-xxs-5-8 bpColumnCenter">1px&ndash;319px</div>
+		<div class="col-xxs-9-12 bpColumnRight">Small Smartphones</div>
+	</div>
+	<div class="grid">
+		<div class="col-xxs-1-4 bpColumnLeft"><strong>.col-xs-</strong></div>
+		<div class="col-xxs-5-8 bpColumnCenter">320px&ndash;479px</div>
+		<div class="col-xxs-9-12 bpColumnRight">Normal Smartphones</div>
+	</div>
+	<div class="grid">
+		<div class="col-xxs-1-4 bpColumnLeft"><strong>.col-sm-</strong></div>
+		<div class="col-xxs-5-8 bpColumnCenter">480px&ndash;767px</div>
+		<div class="col-xxs-9-12 bpColumnRight">Phablets and Landscape Orientation</div>
+	</div>
+	<div class="grid">
+		<div class="col-xxs-1-4 bpColumnLeft"><strong>.col-md-</strong></div>
+		<div class="col-xxs-5-8 bpColumnCenter">768px&ndash;991px</div>
+		<div class="col-xxs-9-12 bpColumnRight">Small Tablets</div>
+	</div>
+	<div class="grid">
+		<div class="col-xxs-1-4 bpColumnLeft"><strong>.col-lg-</strong></div>
+		<div class="col-xxs-5-8 bpColumnCenter">992px&ndash;1199px</div>
+		<div class="col-xxs-9-12 bpColumnRight">Large Tablets and Small Laptops</div>
+	</div>
+	<div class="grid">
+		<div class="col-xxs-1-4 bpColumnLeft"><strong>.col-xl-</strong></div>
+		<div class="col-xxs-5-8 bpColumnCenter">1200px&ndash;1439px</div>
+		<div class="col-xxs-9-12 bpColumnRight">Large Laptops and Workstation Monitors</div>
+	</div>
+	<div class="grid addMarginBtm3">
+		<div class="col-xxs-1-4 bpColumnLeft removeBtmBorder"><strong>.col-xxl-</strong></div>
+		<div class="col-xxs-5-8 bpColumnCenter removeBtmBorder">1440px+</div>
+		<div class="col-xxs-9-12 bpColumnRight removeBtmBorder">Large Screens</div>
+	</div>
+	<div class="grid">
+		<div class="col-xxs-1-12">
+			<h2>Setting up grids (or rows)</h2>
+			<p>Unlike Version 1.0, there is no requirement to use any kind of a <em>container</em> div anymore. You can simply set up a 12-column grid using the <span class="code red">.grid</span> class or the <span class="code red">.row</span> class. I kept <span class="code red">.row</span> in this system for those who are used to Bootstrap, but either does the same.</p>
+		</div>
+	</div>
+	<div class="grid addMarginBtm2">
+		<div class="col-xxs-1-12 grayCell code">
+			<span class="dkBlue">&lt;div</span> <span class="ltBlue">class=</span><span class="red">&quot;grid&quot;</span><span class="dkBlue">&gt;</span><br>
+			<span class="sinIndent">&middot;&middot;&middot;</span><br>
+			<span class="dkBlue">&lt;/div&gt;</span><br><br>
+			<span class="dkBlue">&lt;div</span> <span class="ltBlue">class=</span><span class="red">&quot;row&quot;</span><span class="dkBlue">&gt;</span><br>
+			<span class="sinIndent">&middot;&middot;&middot;</span><br>
+			<span class="dkBlue">&lt;/div&gt;</span>
+		</div>
+	</div>
+	<div class="grid">
+		<div class="col-xxs-1-12">
+			<p>The classes for the grid areas are also significantly different now compared to Bootstrap or Version 1.0. Instead of using just a number to signify how many columns your grid area spans, you instead enter two numbers signifying the starting column and the ending column:</p>
+			<p class="textCenter code red">.col-[breakpoint]-[starting column]-[ending column]</p>
+			<p>Any undeclared divs within the grid will be set to span the full 12 columns. Here are a few examples to illustrate the system and syntax:</p>
+		</div>
+	</div>
+	<!-- Example of Responsive Columns -->
+	<div class="grid addMarginBtm1">
+		<div class="col-xl-1-6 col-md-1-4 redCell">.col-xl-1-6 .col-md-1-4</div>
+		<div class="col-xl-7-12 col-md-5-12 redCell">.col-xl-7-12 .col-md-5-12</div>
+	</div>
+
+	<div class="grid addMarginBtm1">
+		<div class="col-lg-1-9 col-xxs-1-6 blueCell">.col-lg-1-9 .col-xxs-1-6</div>
+		<div class="col-lg-10-12 col-xxs-7-12 blueCell">.col-lg-10-12 .col-xxs-7-12</div>
+	</div>
+
+	<div class="grid addMarginBtm1">
+		<div class="col-md-1-4 greenCell">.col-md-1-4</div>
+		<div class="col-md-5-8 greenCell">.col-md-5-8</div>
+		<div class="col-md-9-12 greenCell">.col-md-9-12</div>
+	</div>
+
+	<div class="grid addMarginBtm3">
+		<div class="col-xl-1-1 col-lg-1-3 col-xxs-1-4 grayCell">.col-xl-1-1 .col-lg-1-3 .col-xxs-1-4</div>
+		<div class="col-xl-2-2 col-lg-4-6 col-xxs-5-8 grayCell">.col-xl-2-2 .col-lg-4-6 .col-xxs-5-8</div>
+		<div class="col-xl-3-3 col-lg-7-9 col-xxs-9-12 grayCell">.col-xl-3-3 .col-lg-7-9 .col-xxs-9-12</div>
+		<div class="col-xl-4-4 col-lg-10-12 col-xxs-1-4 grayCell">.col-xl-4-4 .col-lg-10-12 .col-xxs-1-4</div>
+		<div class="col-xl-5-5 col-lg-1-3 col-xxs-5-8 grayCell">.col-xl-5-5 .col-lg-1-3 .col-xxs-5-9</div>
+		<div class="col-xl-6-6 col-lg-4-6 col-xxs-9-12 grayCell">.col-xl-6-6 .col-lg-4-6 .col-xxs-9-12</div>
+		<div class="col-xl-7-7 col-lg-7-9 col-xxs-1-4 grayCell">.col-xl-7-7 .col-lg-7-9 .col-xxs-1-4</div>
+		<div class="col-xl-8-8 col-lg-10-12 col-xxs-5-8 grayCell">.col-xl-8-8 .col-lg-10-12 .col-xxs-5-8</div>
+		<div class="col-xl-9-9 col-lg-1-3 col-xxs-9-12 grayCell">.col-xl-9-9 .col-lg-1-3 .col-xxs-9-12</div>
+		<div class="col-xl-10-10 col-lg-4-6 col-xxs-1-4 grayCell">.col-xl-10-10 .col-lg-4-6 .col-xxs-1-4</div>
+		<div class="col-xl-11-11 col-lg-7-9 col-xxs-5-8 grayCell">.col-xl-11-11 .col-lg-7-9 .col-xxs-5-8</div>
+		<div class="col-xl-12-12 col-lg-10-12 col-xxs-9-12 grayCell">.col-xl-12-12 .col-lg-10-12 .col-xxs-9-12</div>
+	</div>
+	<div class="grid">
+		<div class="col-xxs-1-12">
+			<h2>Column Wrapping</h2>
+			<p>Column wrapping can still happen within reason. While you cannot make the divs span a number of columns past the final column, you can see that divs will slide in and out of the first row if they can fit.</p>
+		</div>
+	</div>
+	<!-- Example of Column Wrapping -->
+	<div class="grid addMarginBtm3">
+		<div class="col-lg-1-8 col-md-1-5 purpleCell">.col-lg-1-8 .col-md-1-5</div>
+		<div class="col-lg-1-6 col-md-6-10 purpleCell">.col-lg-1-6 .col-md-6-10</div>
+		<div class="col-lg-7-11 purpleCell">.col-lg-7-11</div>
+	</div>
+	<div class="grid">
+		<div class="col-xxs-1-12">
+			<h2>Changing Grid Item Heights</h2>
+			<p>In the past, you would simply set a height to a div and manipulate things around it. Setting a height in this system will make all the divs in a row grow in the same height. Let me illustrate:</p>
+		</div>
+	</div>
+	<div class="grid addMarginBtm2">
+		<div class="col-xxs-1-12 grayCell code">
+			<span class="green">.leftDivTaller</span> {<br>
+				<span class="sinIndent purple">height:</span> 8em;<br>
+			}
+		</div>
+	</div>
+	<!-- Example of changing height of one div -->
+	<div class="grid addMarginBtm3">
+		<div class="col-md-1-5 leftDivTaller greenCell">.col-md-1-5 .leftDivTaller</div>
+		<div class="col-md-6-12 greenCell">.col-md-6-12</div>
+	</div>
+	<div class="grid">
+		<div class="col-xxs-1-12">
+			<p>Now if you wanted to simply make the left grid area taller but keep the right its own height, try using <span class="code red">.grid-row</span> in your CSS:</p>
+		</div>
+	</div>
+	<div class="grid addMarginBtm2">
+		<div class="col-xxs-1-12 grayCell code">
+			<span class="green">.leftGridAreaTaller</span> {<br>
+				<span class="sinIndent purple">grid-row:</span> 1 / 3;<br>
+			}
+		</div>
+	</div>
+	<!-- Example of changing height of one grid area -->
+	<div class="grid addMarginBtm3">
+		<div class="col-md-1-5 leftGridAreaTaller blueCell">.col-md-1-5 .leftGridAreaTaller<br><br>You need content in this cell to push the height.<br><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque, est ac dictum aliquet, nisi velit cursus urna, eu dapibus velit odio quis lorem. Donec sit amet nisl vel sem dignissim varius eu ac leo. Donec sit amet leo eget risus iaculis accumsan. Sed eleifend egestas consectetur.</em></div>
+		<div class="col-md-6-12 blueCell">.col-md-6-12</div>
+	</div>
+	<div class="grid">
+		<div class="col-xxs-1-12">
+			<h2>No more Column Reset</h2>
+			<p>Since CSS Grid does not use floats to place items, the idea of a <em>clearfix</em> to clear said floats within a row is gone. A simple solution would be to set up multiple rows or use the column classes, or even to explore using <span class="code red">.grid-row</span> in your CSS.</p>
+		</div>
+	</div>
+	<!-- Example of Column Reset -->
+	<div class="grid addMarginBtm3">
+		<div class="col-lg-1-8 col-md-1-12 col-xxs-1-6 goldCell">.col-lg-1-8 .col-md-1-12 .col-xxs-1-6</div>
+		<div class="col-lg-9-12 col-md-1-6 col-xxs-7-12 goldCell">.col-lg-9-12 .col-md-1-6 .col-xxs-6-12</div>
+		<div class="col-lg-1-4 col-md-1-6 grayCell">.col-lg-1-4 .col-md-1-6</div>
+		<div class="col-lg-5-8 col-md-7-11 grayCell">.col-lg-5-8 .col-md-7-11</div>
+		<div class="col-lg-9-12 col-md-1-4 grayCell">.col-lg-9-12 .col-md-1-4</div>
+		<div class="col-lg-1-4 col-md-1-4 goldCell">.col-lg-1-4 .col-md-1-4</div>
+		<div class="col-lg-5-12 col-md-5-8 goldCell">.col-lg-5-12 .col-md-5-8</div>
+	</div>
+	<div class="grid">
+		<div class="col-xxs-1-12">
+			<h2>Nested Columns</h2>
+			<p>If you wish to nest columns within a column, you simply set up a new <span class="code red">.grid</span> or <span class="code red">.row</span> and go from there. The grid area you&rsquo;re in will act as a container for the new row.</p>
+		</div>
+	</div>
+	<!-- Example of Nested Columns -->
+	<div class="grid addMarginBtm3">
+		<div class="col-lg-1-6 col-md-1-9 redCell">
+			.col-lg-1-6 .col-md-1-9
+			<div class="grid addMarginBtm1">
+				<div class="col-md-1-4 purpleCell">.col-md-1-4</div>
+				<div class="col-md-5-8 purpleCell">.col-md-5-8</div>
+				<div class="col-md-9-12 purpleCell">.col-md-9-12</div>
+			</div>
+		</div>
+		<div class="col-lg-7-12 col-md-10-12 redCell">.col-lg-7-12 .col-md-10-12</div>
+	</div>
+	<div class="grid">
+		<div class="col-xxs-1-12">
+			<h2>Column Reordering</h2>
+			<p>Since we are no longer using floats and margins to place items in a grid, the idea of having <em>push</em> and <em>pull</em> classes is redunant. Instead, just set up your placement using the column classes with the numbers as where you want things to place, but you'll also need to set your grid areas to be in one row using <span class="red code">grid-row</span> in the media queries. Here's the example from Version 1.0 redone in the new ideology:</p>
+		</div>
+	</div>
+	<div class="grid addMarginBtm2">
+		<div class="col-xxs-1-12 grayCell code">
+			<span class="dkBlue">@media</span> (min-width: 768px) {<br>
+			<span class="sinIndent green">.keepItInOneRow</span> {<br>
+				<span class="dblIndent purple">grid-row:</span> 1 / 1;<br>
+			<span class="sinIndent">}</span><br>
+			}
+		</div>
+	</div>
+	<!-- Example of Column Reordering with Push/Pull -->
+	<div class="grid addMarginBtm3">
+		<div class="col-lg-5-12 col-md-1-8 keepItInOneRow greenCell">.col-lg-5-12 .col-md-1-8 .keepItInOneRow</div>
+		<div class="col-lg-1-4 col-md-9-12 keepItInOneRow greenCell">.col-lg-1-4 .col-md-9-12 .keepItInOneRow</div>
+	</div>
+	<div class="grid">
+		<div class="col-xxs-1-12">
+			<h2>Column Offset</h2>
+			<p>Offsetting is a simpler matter with CSS Grid, as you can just set your grid areas to place exactly in the columns you wish. Here is the example from Version 1.0 redone:</p>
+		</div>
+	</div>
+	<!-- Example of Column Offset -->
+	<div class="grid addMarginBtm1">
+		<div class="col-lg-4-9 col-md-3-10 blueCell">.col-lg-4-9 .col-md-3-10</div>
+	</div>
+
+	<div class="grid addMarginBtm1">
+		<div class="col-lg-1-2 col-md-1-3 blueCell">.col-lg-1-2 .col-md-1-3</div>
+		<div class="col-lg-5-8 col-md-5-8 blueCell">.col-lg-5-8 .col-md-5-8</div>
+		<div class="col-lg-11-12 col-md-10-12 blueCell">.col-lg-11-12 .col-md-10-12</div>
+	</div>
+
+	<div class="grid addMarginBtm3">
+		<div class="col-lg-4-7 col-md-3-7 blueCell">.col-lg-4-7 .col-md-3-7</div>
+		<div class="col-lg-10-12 col-md-9-12 blueCell">.col-lg-10-12 .col-md-9-12</div>
+	</div>
+	<div class="grid">
+		<div class="col-xxs-1-12">
+			<h2>Column Visibility</h2>
+			<p>Just like before, you can make grid areas appear and disappear at certain breakpoints by using <span class="code red">.hidden-</span> and <span class="code red">.visible-</span> classes alongside your grid column classes. Simply use <span class="code red">.hidden-</span> or <span class="code red">.visible-</span> with the breakpoint you wish.</p>
+			<p><strong>NOTE:</strong>It seems when you want to hide a grid area on one breakpoint, you need to declare the <span class="code red">.visible-</span> class on the other remaining breakpoints you wish this area to appear. It&rsquo;s a bug I also noticed with Bootstrap and am exploring a workaround.</p>
+			<p>Also bear in mind that columns will not shift to the left when you hide a div area because we&rsquo;re designating exactly where they place.</p>
+		</div>
+	</div>
+	<!-- Example of Column Visibility -->
+	<div class="grid addMarginBtm3">
+		<div class="col-lg-1-3 col-md-1-4 col-sm-1-6 grayCell">.col-lg-1-3 .col-md-1-4 .col-sm-1-6</div>
+		<div class="col-lg-4-6 col-md-5-8 visible-xxl visible-xl visible-lg visible-md hidden-sm hidden-xxs goldCell">.col-lg-4-6 .col-md-5-8 .visible-xxl .visible-xl .visible-lg .visible-md .hidden-sm .hidden-xxs</div>
+		<div class="col-lg-7-9 col-md-9-12 col-sm-7-12 grayCell">.col-lg-4-6 .col-md-9-12 .col-sm-7-12</div>
+		<div class="col-lg-10-12 visible-xxl visible-xl visible-lg hidden-md hidden-sm hidden-xxs purpleCell">.col-lg-10-12 .visible-xxl .visible-xl .visible-lg .hidden-md .hidden-sm .hidden-xxs</div>
+	</div>
+	<div class="grid">
+		<div class="col-xxs-1-12">
+			<h2>Customizing Basic Grid</h2>
+			<p>An additional benefit to this CSS framework is you can totally customize the number of breakpoints you want, the widths of those breakpoints, their names, the gutter, and the total number of columns you want.</p>
+			<p class="addMarginBtm3">I&rsquo;ve included the SCSS files used to make the full grid. Simply open <em>_config.scss</em> and change the configuration as you see fit, then process it into finished CSS using a preprocessor such as Gulp or Koala.</p>
+			<h2>Questions? Comments? Suggestions?</h2>
+			<p class="addMarginBtm3">Please feel free to <a href="https://amportfolio.com/contact">reach out</a>!</p>
+			<p class="copyright textCenter">&copy; 2019 | All rights reserved</p>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
